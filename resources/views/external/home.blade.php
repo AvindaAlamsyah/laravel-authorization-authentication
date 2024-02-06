@@ -18,16 +18,15 @@
           rel="stylesheet">
 
     <!-- Build asset files -->
-    {{-- @vite(['resources/scss/app.scss', 'resources/js/app.js']) --}}
-    @vite(['resources/scss/app.scss'])
+    @vite(['resources/scss/external/app.scss'])
 
     <!-- =======================================================
-  * Template Name: Arsha
-  * Updated: Jan 29 2024 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    * Template Name: Arsha
+    * Updated: Jan 29 2024 with Bootstrap v5.3.2
+    * Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
 </head>
 
 <body>
@@ -884,9 +883,7 @@
     <!-- Vendor JS Files -->
     {{-- <script src="assets/vendor/php-email-form/validate.js"></script> --}}
 
-    @vite(['resources/js/app.js'])
+    @vite(['resources/js/external/app.js'])
 </body>
-
-</html>
 
 </html>
