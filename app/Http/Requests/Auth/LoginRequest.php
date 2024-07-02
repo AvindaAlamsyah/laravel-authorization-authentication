@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Auth;
 
+use App\Enums\UserStatus;
 use Illuminate\Auth\Events\Lockout;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
@@ -46,6 +47,14 @@ class LoginRequest extends FormRequest
 
             throw ValidationException::withMessages([
                 'email' => trans('auth.failed'),
+            ]);
+        }
+
+        if (($status = Auth::user()->status) !== UserStatus::ACTIVATED->value) {
+            Auth::logout();
+
+            throw ValidationException::withMessages([
+                'email' => trans('auth.account_'. strtolower($status))
             ]);
         }
 
