@@ -48,6 +48,8 @@
                 </nav>
             </div>
 
+            @include('internal.partials.alert')
+
             @yield('content')
         </main>
         <!-- End Content-->

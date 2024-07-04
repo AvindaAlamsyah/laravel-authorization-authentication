@@ -321,6 +321,28 @@ export default (function () {
                 if (!form.checkValidity()) {
                     event.preventDefault();
                     event.stopPropagation();
+
+                    let invalidOptions = document.querySelectorAll(
+                        ".form-control:invalid"
+                    );
+
+                    invalidOptions.forEach(function (element) {
+                        let errorFeedback = document.createElement('div');
+
+                        errorFeedback.textContent = element.validationMessage;
+                        errorFeedback.setAttribute('class', 'invalid-feedback');
+
+                        element.after(errorFeedback);
+                    });
+
+                    invalidOptions.forEach(function (element) {
+                        element.parentNode.childNodes.forEach(function (node) {
+                            if (node.className == "invalid-feedback") {
+                                node.classList.remove();
+                            }
+                        });
+                    });
+
                 }
 
                 form.classList.add("was-validated");
