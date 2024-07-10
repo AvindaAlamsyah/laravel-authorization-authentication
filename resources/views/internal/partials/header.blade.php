@@ -11,7 +11,7 @@
         <ul class="d-flex align-items-center">
             <li class="nav-item dropdown pe-3">
                 <a class="nav-link nav-profile d-flex align-items-center pe-0" data-bs-toggle="dropdown" href="#">
-                    <img class="rounded-circle" src="{{ asset('internal/img/profile-img.jpg') }}" alt="Profile">
+                    <img class="rounded-circle" src="{{ asset(Auth::user()->avatar ? 'storage/uploads/' . Auth::user()->avatar : 'internal/img/profile-img.jpg') }}" alt="Profile">
                     <span class="d-none d-md-block dropdown-toggle ps-2">Hi, {{ Auth::user()->name }}</span>
                 </a>
 

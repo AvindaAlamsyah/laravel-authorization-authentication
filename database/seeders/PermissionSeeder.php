@@ -37,5 +37,23 @@ class PermissionSeeder extends Seeder
             ['name' => EnumsPermission::ROLE_DELETE->value],
             ['name' => EnumsPermission::ROLE_DELETE->value]
         );
+
+        // User access
+        Permission::updateOrCreate(
+            ['name' => EnumsPermission::USER_VIEW->value],
+            ['name' => EnumsPermission::USER_VIEW->value],
+        );
+        Permission::updateOrCreate(
+            ['name' => EnumsPermission::USER_CREATE->value],
+            ['name' => EnumsPermission::USER_CREATE->value],
+        );
+        Permission::updateOrCreate(
+            ['name' => EnumsPermission::USER_EDIT->value],
+            ['name' => EnumsPermission::USER_EDIT->value],
+        );
+        Permission::updateOrCreate(
+            ['name' => EnumsPermission::USER_DELETE->value],
+            ['name' => EnumsPermission::USER_DELETE->value],
+        );
     }
 }
