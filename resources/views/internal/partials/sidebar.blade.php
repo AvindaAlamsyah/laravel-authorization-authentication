@@ -31,5 +31,14 @@
                 </ul>
             </li>
         @endcanany
+
+        <li class="nav-heading">Account & Setting</li>
+
+        <li class="nav-item">
+            <a class="nav-link {{ request()->is('profile') ? '' : 'collapsed' }}" href="{{ url('profile') }}">
+                <i class="bi bi-person"></i>
+                <span>My Account</span>
+            </a>
+        </li>
     </ul>
 </aside>
